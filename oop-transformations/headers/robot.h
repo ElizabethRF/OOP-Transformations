@@ -23,10 +23,10 @@
 
 #include <stdio.h>
 #include <math.h>
+#define PARTS 16
 
-
-#ifndef __BODY
-#define __BODY
+#ifndef __ROBOT
+#define __ROBOT
 
 class Body{
 public:
