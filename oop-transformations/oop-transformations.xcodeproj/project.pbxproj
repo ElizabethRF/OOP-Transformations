@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECDA85B4232C430C00B428B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85B3232C430C00B428B9 /* main.cpp */; };
+		ECDA85BC232C432300B428B9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDA85BB232C432300B428B9 /* GLUT.framework */; };
+		ECDA85BE232C432B00B428B9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDA85BD232C432B00B428B9 /* OpenGL.framework */; };
+		ECDA85C6232C441600B428B9 /* arm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85BF232C441500B428B9 /* arm.cpp */; };
+		ECDA85C7232C441600B428B9 /* feet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C0232C441500B428B9 /* feet.cpp */; };
+		ECDA85C8232C441600B428B9 /* head.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C1232C441500B428B9 /* head.cpp */; };
+		ECDA85C9232C441600B428B9 /* leg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C2232C441500B428B9 /* leg.cpp */; };
+		ECDA85CA232C441600B428B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C3232C441500B428B9 /* main.cpp */; };
+		ECDA85CB232C441600B428B9 /* thight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C4232C441500B428B9 /* thight.cpp */; };
+		ECDA85CC232C441600B428B9 /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C5232C441600B428B9 /* body.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ECDA85AE232C430C00B428B9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		ECDA85B0232C430C00B428B9 /* oop-transformations */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "oop-transformations"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECDA85B3232C430C00B428B9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		ECDA85BB232C432300B428B9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		ECDA85BD232C432B00B428B9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		ECDA85BF232C441500B428B9 /* arm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = arm.cpp; sourceTree = "<group>"; };
+		ECDA85C0232C441500B428B9 /* feet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = feet.cpp; sourceTree = "<group>"; };
+		ECDA85C1232C441500B428B9 /* head.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = head.cpp; sourceTree = "<group>"; };
+		ECDA85C2232C441500B428B9 /* leg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = leg.cpp; sourceTree = "<group>"; };
+		ECDA85C3232C441500B428B9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		ECDA85C4232C441500B428B9 /* thight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thight.cpp; sourceTree = "<group>"; };
+		ECDA85C5232C441600B428B9 /* body.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = body.cpp; sourceTree = "<group>"; };
+		ECDA85CD232C442300B428B9 /* headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = headers; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECDA85AD232C430C00B428B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECDA85BE232C432B00B428B9 /* OpenGL.framework in Frameworks */,
+				ECDA85BC232C432300B428B9 /* GLUT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECDA85A7232C430C00B428B9 = {
+			isa = PBXGroup;
+			children = (
+				ECDA85B2232C430C00B428B9 /* oop-transformations */,
+				ECDA85B1232C430C00B428B9 /* Products */,
+				ECDA85BA232C432300B428B9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ECDA85B1232C430C00B428B9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA85B0232C430C00B428B9 /* oop-transformations */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECDA85B2232C430C00B428B9 /* oop-transformations */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA85CD232C442300B428B9 /* headers */,
+				ECDA85BF232C441500B428B9 /* arm.cpp */,
+				ECDA85C5232C441600B428B9 /* body.cpp */,
+				ECDA85C0232C441500B428B9 /* feet.cpp */,
+				ECDA85C1232C441500B428B9 /* head.cpp */,
+				ECDA85C2232C441500B428B9 /* leg.cpp */,
+				ECDA85C3232C441500B428B9 /* main.cpp */,
+				ECDA85C4232C441500B428B9 /* thight.cpp */,
+				ECDA85B3232C430C00B428B9 /* main.cpp */,
+			);
+			path = "oop-transformations";
+			sourceTree = "<group>";
+		};
+		ECDA85BA232C432300B428B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECDA85BD232C432B00B428B9 /* OpenGL.framework */,
+				ECDA85BB232C432300B428B9 /* GLUT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECDA85AF232C430C00B428B9 /* oop-transformations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECDA85B7232C430C00B428B9 /* Build configuration list for PBXNativeTarget "oop-transformations" */;
+			buildPhases = (
+				ECDA85AC232C430C00B428B9 /* Sources */,
+				ECDA85AD232C430C00B428B9 /* Frameworks */,
+				ECDA85AE232C430C00B428B9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "oop-transformations";
+			productName = "oop-transformations";
+			productReference = ECDA85B0232C430C00B428B9 /* oop-transformations */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECDA85A8232C430C00B428B9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = RayCasters.Tec;
+				TargetAttributes = {
+					ECDA85AF232C430C00B428B9 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = ECDA85AB232C430C00B428B9 /* Build configuration list for PBXProject "oop-transformations" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = ECDA85A7232C430C00B428B9;
+			productRefGroup = ECDA85B1232C430C00B428B9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECDA85AF232C430C00B428B9 /* oop-transformations */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECDA85AC232C430C00B428B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECDA85C6232C441600B428B9 /* arm.cpp in Sources */,
+				ECDA85CB232C441600B428B9 /* thight.cpp in Sources */,
+				ECDA85B4232C430C00B428B9 /* main.cpp in Sources */,
+				ECDA85CA232C441600B428B9 /* main.cpp in Sources */,
+				ECDA85C7232C441600B428B9 /* feet.cpp in Sources */,
+				ECDA85C9232C441600B428B9 /* leg.cpp in Sources */,
+				ECDA85C8232C441600B428B9 /* head.cpp in Sources */,
+				ECDA85CC232C441600B428B9 /* body.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		ECDA85B5232C430C00B428B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		ECDA85B6232C430C00B428B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		ECDA85B8232C430C00B428B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ECDA85B9232C430C00B428B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECDA85AB232C430C00B428B9 /* Build configuration list for PBXProject "oop-transformations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECDA85B5232C430C00B428B9 /* Debug */,
+				ECDA85B6232C430C00B428B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECDA85B7232C430C00B428B9 /* Build configuration list for PBXNativeTarget "oop-transformations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECDA85B8232C430C00B428B9 /* Debug */,
+				ECDA85B9232C430C00B428B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECDA85A8232C430C00B428B9 /* Project object */;
+}

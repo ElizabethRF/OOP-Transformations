@@ -29,7 +29,7 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "body.h"
+#include "../headers/body.h"
 
 
 // Variables definition 
