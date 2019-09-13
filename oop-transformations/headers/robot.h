@@ -28,10 +28,22 @@
 #ifndef __ROBOT
 #define __ROBOT
 
-class Body{
+class Robot{
 public:
-    Body();
-    ~Body(); // this free the memory when im done with the class
+    Robot();
+    ~Robot(); // this free the memory when im done with the class
+
+
+    void draw();
+    void update();
+
+    enum ROBOT_PARTS{
+      HEAD, NECK, BODY, HIPS, RLEG, RANKLE, RFOOT, RSHOULDER, RARM, RHAND,
+      LSHOULDER, LARM, LHAND, LLEG, LANKLE, LFOOT
+    };
+
+    Block* parts[PARTS];
+    float rotations[][PARTS];
 
 };
 
