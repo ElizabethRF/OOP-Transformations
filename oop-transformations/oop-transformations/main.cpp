@@ -29,32 +29,15 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "../headers/body.h"
+#include "../headers/robot.h"
 
+Robot* robot;
 
-// Variables definition 
-float redColor[3];   // R G B 123 17 22
-float blueColor[3];  // R G B 25 59 166
-float whiteColor[3]; // R G B 1 1 1
-float greyColor[3];  // R G B 105 105 105
 
 void init() // FOR GLUT LOOP
 {
-	redColor[0]=0.48;
-    redColor[1]=0.06;
-    redColor[2]=0.08;
-    
-    blueColor[0]=0.09;
-    blueColor[1]=0.23;
-    blueColor[2]=0.65;
-    
-    whiteColor[0]=1;
-    whiteColor[1]=1;
-    whiteColor[2]=1;
-    
-    greyColor[0]=0.41;
-    greyColor[1]=0.41;
-    greyColor[2]=0.41;
+    robot = new Robot();
+	
 	
 	
 	glEnable(GL_DEPTH_TEST);			// Enable check for close and far objects.
@@ -95,6 +78,7 @@ void display()							// Called for each frame (about 60 times per second).
 		      0.0, 1.0, 0.0);										// "UP" vector.
 
 	axes(5);
+    robot->draw(); 
 	glutSwapBuffers();												// Swap the hidden and visible buffers.
 }
 
@@ -110,9 +94,10 @@ void reshape(int x, int y)											// Called when the window geometry changes.
 	gluPerspective(40.0, (GLdouble)x / (GLdouble)y, 0.5, 50.0);		// Configure the camera lens aperture.
 	glMatrixMode(GL_MODELVIEW);										// Go to 3D mode.
 	glViewport(0, 0, x, y);											// Configure the camera frame dimensions.
-	gluLookAt(0.0, 1.0, 4.0,
-		      0.0, 0.0, 0.0,
-		      0.0, 1.0, 0.0);
+	gluLookAt(0.0, 0.0, 10.0,  // where the camera is
+		      0.0, 0.0, 0.0, // pointing at
+		      0.0, 0.0, 0.0); // up vector
+    
 	display();
 }
 

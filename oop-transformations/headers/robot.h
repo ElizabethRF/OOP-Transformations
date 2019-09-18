@@ -23,6 +23,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include "block.h"
 #define PARTS 16
 
 #ifndef __ROBOT
@@ -39,11 +40,16 @@ public:
 
     enum ROBOT_PARTS{
       HEAD, NECK, BODY, HIPS, RLEG, RANKLE, RFOOT, RSHOULDER, RARM, RHAND,
-      LSHOULDER, LARM, LHAND, LLEG, LANKLE, LFOOT
+      LSHOULDER, LARM, LHAND, LLEG, LANKLE, LFOOT, CHEST, LFOREARM, RFOREARM
     };
 
     Block* parts[PARTS];
-    float rotations[][PARTS];
+    float rotations[3][PARTS];
+    // colors definition 
+    float redColor[3];   // R G B 123 17 22
+    float blueColor[3];  // R G B 25 59 166
+    float whiteColor[3]; // R G B 1 1 1
+    float greyColor[3];  // R G B 105 105 105
 
 };
 

@@ -10,13 +10,8 @@
 		ECDA85B4232C430C00B428B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85B3232C430C00B428B9 /* main.cpp */; };
 		ECDA85BC232C432300B428B9 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDA85BB232C432300B428B9 /* GLUT.framework */; };
 		ECDA85BE232C432B00B428B9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDA85BD232C432B00B428B9 /* OpenGL.framework */; };
-		ECDA85C6232C441600B428B9 /* arm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85BF232C441500B428B9 /* arm.cpp */; };
-		ECDA85C7232C441600B428B9 /* feet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C0232C441500B428B9 /* feet.cpp */; };
-		ECDA85C8232C441600B428B9 /* head.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C1232C441500B428B9 /* head.cpp */; };
-		ECDA85C9232C441600B428B9 /* leg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C2232C441500B428B9 /* leg.cpp */; };
-		ECDA85CA232C441600B428B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C3232C441500B428B9 /* main.cpp */; };
-		ECDA85CB232C441600B428B9 /* thight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C4232C441500B428B9 /* thight.cpp */; };
-		ECDA85CC232C441600B428B9 /* body.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECDA85C5232C441600B428B9 /* body.cpp */; };
+		ECF617442331A8D800641B1F /* block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF617432331A8D800641B1F /* block.cpp */; };
+		ECF617462331A8EC00641B1F /* robot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF617452331A8EC00641B1F /* robot.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,14 +31,9 @@
 		ECDA85B3232C430C00B428B9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ECDA85BB232C432300B428B9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		ECDA85BD232C432B00B428B9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		ECDA85BF232C441500B428B9 /* arm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = arm.cpp; sourceTree = "<group>"; };
-		ECDA85C0232C441500B428B9 /* feet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = feet.cpp; sourceTree = "<group>"; };
-		ECDA85C1232C441500B428B9 /* head.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = head.cpp; sourceTree = "<group>"; };
-		ECDA85C2232C441500B428B9 /* leg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = leg.cpp; sourceTree = "<group>"; };
-		ECDA85C3232C441500B428B9 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		ECDA85C4232C441500B428B9 /* thight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thight.cpp; sourceTree = "<group>"; };
-		ECDA85C5232C441600B428B9 /* body.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = body.cpp; sourceTree = "<group>"; };
 		ECDA85CD232C442300B428B9 /* headers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = headers; sourceTree = SOURCE_ROOT; };
+		ECF617432331A8D800641B1F /* block.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = block.cpp; sourceTree = "<group>"; };
+		ECF617452331A8EC00641B1F /* robot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = robot.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,14 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				ECDA85CD232C442300B428B9 /* headers */,
-				ECDA85BF232C441500B428B9 /* arm.cpp */,
-				ECDA85C5232C441600B428B9 /* body.cpp */,
-				ECDA85C0232C441500B428B9 /* feet.cpp */,
-				ECDA85C1232C441500B428B9 /* head.cpp */,
-				ECDA85C2232C441500B428B9 /* leg.cpp */,
-				ECDA85C3232C441500B428B9 /* main.cpp */,
-				ECDA85C4232C441500B428B9 /* thight.cpp */,
 				ECDA85B3232C430C00B428B9 /* main.cpp */,
+				ECF617432331A8D800641B1F /* block.cpp */,
+				ECF617452331A8EC00641B1F /* robot.cpp */,
 			);
 			path = "oop-transformations";
 			sourceTree = "<group>";
@@ -157,14 +142,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECDA85C6232C441600B428B9 /* arm.cpp in Sources */,
-				ECDA85CB232C441600B428B9 /* thight.cpp in Sources */,
+				ECF617462331A8EC00641B1F /* robot.cpp in Sources */,
 				ECDA85B4232C430C00B428B9 /* main.cpp in Sources */,
-				ECDA85CA232C441600B428B9 /* main.cpp in Sources */,
-				ECDA85C7232C441600B428B9 /* feet.cpp in Sources */,
-				ECDA85C9232C441600B428B9 /* leg.cpp in Sources */,
-				ECDA85C8232C441600B428B9 /* head.cpp in Sources */,
-				ECDA85CC232C441600B428B9 /* body.cpp in Sources */,
+				ECF617442331A8D800641B1F /* block.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
