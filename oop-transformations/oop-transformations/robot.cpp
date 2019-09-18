@@ -31,7 +31,7 @@ Robot::Robot(){ // like init
     sizes[CHEST][2] =     1.5f;
   
     sizes[NECK][0] =      0.5f;
-    sizes[NECK][1] =      0.5f;
+    sizes[NECK][1] =      0.3f;
     sizes[NECK][2] =      1.0f;
   
     sizes[HEAD][0] =      1.0f;
@@ -91,17 +91,17 @@ Robot::Robot(){ // like init
     
     // position related to neck
     positions[HEAD][0] =      0;
-    positions[HEAD][1] =      0;
+    positions[HEAD][1] =      (sizes[NECK][1]/2)+(sizes[HEAD][1]/2);
     positions[HEAD][2] =      0;
     
     // position related to chest
     positions[NECK][0] =      0;
-    positions[NECK][1] =      0;
+    positions[NECK][1] =      (sizes[CHEST][1]/2)+(sizes[NECK][1]/2);
     positions[NECK][2] =      0;
     
     // position related to body
     positions[CHEST][0] =     0;
-    positions[CHEST][1] =     0;
+    positions[CHEST][1] =     (sizes[BODY][1]/2)+(sizes[CHEST][1]/2);
     positions[CHEST][2] =     0;
     
     //core of robot
@@ -177,18 +177,6 @@ Robot::Robot(){ // like init
     positions[LHAND][1] =     0;
     positions[LHAND][2] =     0;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-    
     parts[HEAD] = new Block(blueColor, positions[HEAD],sizes[HEAD]);
     parts[NECK] = new Block(whiteColor,positions[NECK],sizes[NECK]);
     parts[HIPS] = new Block(greyColor,positions[HIPS],sizes[HIPS]);
@@ -227,10 +215,12 @@ void Robot::draw(){ // display()
     
     // core of the body
     parts[BODY]->draw();
+    // DOWN PART OF THE BODY
     glPushMatrix();
     {
         parts[HIPS]->draw();
         
+        // RIGHT SIDE LEGS
         glPushMatrix();
         {
             parts[RLEG]->draw();
@@ -239,6 +229,8 @@ void Robot::draw(){ // display()
             
         }
         glPopMatrix();
+        
+        // LEFT SIDE LEGS
         glPushMatrix();
         {
             parts[LLEG]->draw();
@@ -251,6 +243,35 @@ void Robot::draw(){ // display()
         
     }glPopMatrix();
     
+    // TOP PART OF THE BODY
+    glPushMatrix();
+    {
+        parts[CHEST]->draw();
+        // RIGHT ARM
+        glPushMatrix();
+        {
+            
+        }
+        glPopMatrix();
+        
+        // LEFT ARM
+        glPushMatrix();
+        {
+            
+        }
+        glPopMatrix();
+        
+        // NECK
+        parts[NECK]->draw();
+        // HEAD
+        parts[HEAD]->draw();
+        
+        
+    }
+    glPopMatrix();
+    
+    
+    
     
     //
     //parts[RSHOULDER]->draw();
@@ -260,7 +281,7 @@ void Robot::draw(){ // display()
     //parts[LARM]->draw();
     //parts[LHAND]->draw();
 
-    //parts[CHEST]->draw();
+    //
     //parts[RFOREARM]->draw();
     //parts[LFOREARM]->draw();
     
