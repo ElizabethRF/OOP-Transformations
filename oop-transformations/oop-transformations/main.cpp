@@ -73,7 +73,7 @@ void display()							// Called for each frame (about 60 times per second).
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);				// Clear color and depth buffers.
 	glLoadIdentity();												// Reset 3D view matrix.
-	gluLookAt(0.0, 10.0, 10.0,										// Where the camera is.
+	gluLookAt(0.0, 0.0, 20.0,										// Where the camera is.
 		      0.0, 0.0, 0.0,										// To where the camera points at.
 		      0.0, 1.0, 0.0);										// "UP" vector.
 
@@ -94,7 +94,7 @@ void reshape(int x, int y)											// Called when the window geometry changes.
 	gluPerspective(40.0, (GLdouble)x / (GLdouble)y, 0.5, 50.0);		// Configure the camera lens aperture.
 	glMatrixMode(GL_MODELVIEW);										// Go to 3D mode.
 	glViewport(0, 0, x, y);											// Configure the camera frame dimensions.
-	gluLookAt(0.0, 1.0, 4.0,  // where the camera is
+	gluLookAt(0.0, 1.0, 10.0,  // where the camera is
 		      0.0, 0.0, 0.0, // pointing at
 		      0.0, 1.0, 0.0); // up vector
     

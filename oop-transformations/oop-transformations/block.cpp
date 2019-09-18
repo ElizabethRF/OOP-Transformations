@@ -17,14 +17,21 @@ Block::~Block(){
 }
 
 void Block::draw(){ // display()
-    glPushMatrix();
-    {
-        glTranslatef(position[0], position[1], position[2]);
+        // color
         glColor3f(color[0],color[1],color[2]);
-        glScalef(size[0],size[1],size[2]);
-        glutSolidCube(size[0]);
-    }
+        // rotate
+    
+        // translate
+        glTranslatef(position[0], position[1], position[2]);
+        glPushMatrix();
+        {
+            // scale
+            glScalef(size[0],size[1],size[2]);
+        
+            glutSolidCube(1);
+        }
     glPopMatrix();
+    
 }
 
 void Block::update(){ // update

@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "block.h"
-#define PARTS 16
+#define PARTS 19
 
 #ifndef __ROBOT
 #define __ROBOT
