@@ -66,9 +66,9 @@ Robot::Robot(){ // like init
     sizes[LSHOULDER][1] = sizes[RSHOULDER][1];
     sizes[LSHOULDER][2] = sizes[RSHOULDER][2];
  
-    sizes[RFOREARM][0] =  0.5f;
-    sizes[RFOREARM][1] =  1.5f;
-    sizes[RFOREARM][2] =  0.5f;
+    sizes[RFOREARM][0] =  1.5f;
+    sizes[RFOREARM][1] =  0.7f;
+    sizes[RFOREARM][2] =  0.7f;
     sizes[LFOREARM][0] =  sizes[RFOREARM][0];
     sizes[LFOREARM][1] =  sizes[RFOREARM][1];
     sizes[LFOREARM][2] =  sizes[RFOREARM][2];
@@ -83,9 +83,9 @@ Robot::Robot(){ // like init
     sizes[RHAND][0] =     0.4f;
     sizes[RHAND][1] =     0.3f;
     sizes[RHAND][2] =     0.3f;
-    sizes[LHAND][0] =     sizes[LHAND][0];
-    sizes[LHAND][1] =     sizes[LHAND][1];
-    sizes[LHAND][2] =     sizes[LHAND][2];
+    sizes[LHAND][0] =     sizes[RHAND][0];
+    sizes[LHAND][1] =     sizes[RHAND][1];
+    sizes[LHAND][2] =     sizes[RHAND][2];
    
     
     
@@ -142,38 +142,38 @@ Robot::Robot(){ // like init
     positions[LFOOT][2] =     positions[RFOOT][2];
     
     // position related to chest
-    positions[RSHOULDER][0] = 0;
+    positions[RSHOULDER][0] = (sizes[CHEST][0]/2)+(sizes[RSHOULDER][0]/2);
     positions[RSHOULDER][1] = 0;
     positions[RSHOULDER][2] = 0;
     
-    positions[LSHOULDER][0] = 0;
+    positions[LSHOULDER][0] = positions[RSHOULDER][0]*-1;
     positions[LSHOULDER][1] = 0;
     positions[LSHOULDER][2] = 0;
     
     // position related to shoulder
-    positions[RFOREARM][0] =  0;
-    positions[RFOREARM][1] =  0;
-    positions[RFOREARM][2] =  0;
-    
-    positions[LFOREARM][0] =  0;
-    positions[LFOREARM][1] =  0;
-    positions[LFOREARM][2] =  0;
-    
-    // position related to forearm
-    positions[RARM][0] =      0;
+    positions[RARM][0] =      (sizes[RSHOULDER][0]/2)+(sizes[RARM][0]/2);
     positions[RARM][1] =      0;
     positions[RARM][2] =      0;
     
-    positions[LARM][0] =      0;
+    positions[LARM][0] =      positions[RARM][0]*-1;
     positions[LARM][1] =      0;
     positions[LARM][2] =      0;
+    
+    // position related to arm
+    positions[RFOREARM][0] =  (sizes[RARM][0]/2)+(sizes[RFOREARM][0]/2);
+    positions[RFOREARM][1] =  0;
+    positions[RFOREARM][2] =  0;
+    
+    positions[LFOREARM][0] =  positions[RFOREARM][0]*-1;
+    positions[LFOREARM][1] =  0;
+    positions[LFOREARM][2] =  0;
 
-    // position relates to arm
-    positions[RHAND][0] =     0;
+    // position relates to forearm
+    positions[RHAND][0] =     (sizes[RFOREARM][0]/2)+(sizes[RHAND][0]/2);
     positions[RHAND][1] =     0;
     positions[RHAND][2] =     0;
     
-    positions[LHAND][0] =     0;
+    positions[LHAND][0] =     positions[RHAND][0]*-1;
     positions[LHAND][1] =     0;
     positions[LHAND][2] =     0;
     
@@ -250,14 +250,20 @@ void Robot::draw(){ // display()
         // RIGHT ARM
         glPushMatrix();
         {
-            
+            parts[RSHOULDER]->draw();
+            parts[RARM]->draw();
+            parts[RFOREARM]->draw();
+            parts[RHAND]->draw();
         }
         glPopMatrix();
         
         // LEFT ARM
         glPushMatrix();
         {
-            
+            parts[LSHOULDER]->draw();
+            parts[LARM]->draw();
+            parts[LFOREARM]->draw();
+            parts[LHAND]->draw();
         }
         glPopMatrix();
         
@@ -270,20 +276,7 @@ void Robot::draw(){ // display()
     }
     glPopMatrix();
     
-    
-    
-    
-    //
-    //parts[RSHOULDER]->draw();
-    //parts[RARM]->draw();
-    //parts[RHAND]->draw();
-    //parts[LSHOULDER]->draw();
-    //parts[LARM]->draw();
-    //parts[LHAND]->draw();
 
-    //
-    //parts[RFOREARM]->draw();
-    //parts[LFOREARM]->draw();
     
     
 }

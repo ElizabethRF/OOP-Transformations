@@ -77,7 +77,7 @@ void display()							// Called for each frame (about 60 times per second).
 		      0.0, 0.0, 0.0,										// To where the camera points at.
 		      0.0, 1.0, 0.0);										// "UP" vector.
 
-	axes(5);
+	//axes(5);
     robot->draw(); 
 	glutSwapBuffers();												// Swap the hidden and visible buffers.
 }
