@@ -30,7 +30,7 @@
 
 class Block{
 public:
-    Block(float colors[3]);
+    Block(float colors[3],float positions[3], float sizes[3]);
     ~Block(); // this free the memory when im done with the class
     
     

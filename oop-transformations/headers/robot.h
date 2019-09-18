@@ -44,7 +44,9 @@ public:
     };
 
     Block* parts[PARTS];
-    float rotations[3][PARTS];
+    float rotations[PARTS][3];
+    float positions[PARTS][3];
+    float sizes[PARTS][3];
     // colors definition 
     float redColor[3];   // R G B 123 17 22
     float blueColor[3];  // R G B 25 59 166

@@ -94,9 +94,9 @@ void reshape(int x, int y)											// Called when the window geometry changes.
 	gluPerspective(40.0, (GLdouble)x / (GLdouble)y, 0.5, 50.0);		// Configure the camera lens aperture.
 	glMatrixMode(GL_MODELVIEW);										// Go to 3D mode.
 	glViewport(0, 0, x, y);											// Configure the camera frame dimensions.
-	gluLookAt(0.0, 0.0, 10.0,  // where the camera is
+	gluLookAt(0.0, 1.0, 4.0,  // where the camera is
 		      0.0, 0.0, 0.0, // pointing at
-		      0.0, 0.0, 0.0); // up vector
+		      0.0, 1.0, 0.0); // up vector
     
 	display();
 }
@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
 	glutInit(&argc, argv);											// Init GLUT with command line parameters.
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGB);		// Use 2 buffers (hidden and visible). Use the depth buffer. Use 3 color channels.
 	glutInitWindowSize(800, 800);
-	glutCreateWindow("CG first program");
+	glutCreateWindow("ROBOT");
 	
 	init();
 	glutReshapeFunc(reshape);										// Reshape CALLBACK function.
