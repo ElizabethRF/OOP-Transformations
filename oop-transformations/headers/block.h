@@ -30,15 +30,16 @@
 
 class Block{
 public:
-    Block(float colors[3],float positions[3], float sizes[3]);
+    Block(float colors[3],float positions[3], float sizes[3], float rotation[4]);
     ~Block(); // this free the memory when im done with the class
     
     
-    void draw();
+    void draw(float rotation[4]);
     void update();
     float position[3];
     float color[3];
     float size[3];
+    float rotation[4];
 
     
 };

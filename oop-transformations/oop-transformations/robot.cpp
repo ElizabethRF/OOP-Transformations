@@ -1,6 +1,15 @@
 #include "../headers/robot.h"
 
 Robot::Robot(){ // like init
+    
+    // variables for rotation
+    direction = 1; //  1 front -1 back
+    xRotation = 0;
+    yRotation = 0;
+    zRotation = 0;
+    
+    
+    // color definition
     whiteColor[0]=1.0f;
     whiteColor[1]=1.0f;
     whiteColor[2]=1.0f;
@@ -17,7 +26,7 @@ Robot::Robot(){ // like init
     greyColor[1]=0.41f;
     greyColor[2]=0.41f;
     
-    
+    // size of parts definition
     sizes[HIPS][0] =      2.0f;
     sizes[HIPS][1] =      0.5f;
     sizes[HIPS][2] =      1.0f;
@@ -26,7 +35,7 @@ Robot::Robot(){ // like init
     sizes[BODY][1] =      1.0f;
     sizes[BODY][2] =      1.0f;
   
-    sizes[CHEST][0] =     2.0f;
+    sizes[CHEST][0] =     2.5f;
     sizes[CHEST][1] =     1.0f;
     sizes[CHEST][2] =     1.5f;
   
@@ -59,9 +68,9 @@ Robot::Robot(){ // like init
     sizes[LFOOT][1] =     sizes[RFOOT][1];
     sizes[LFOOT][2] =     sizes[RFOOT][2];
   
-    sizes[RSHOULDER][0] = 0.5f;
-    sizes[RSHOULDER][1] = 0.5f;
-    sizes[RSHOULDER][2] = 0.5f;
+    sizes[RSHOULDER][0] = 0.7f;
+    sizes[RSHOULDER][1] = 0.7f;
+    sizes[RSHOULDER][2] = 0.7f;
     sizes[LSHOULDER][0] = sizes[RSHOULDER][0];
     sizes[LSHOULDER][1] = sizes[RSHOULDER][1];
     sizes[LSHOULDER][2] = sizes[RSHOULDER][2];
@@ -88,7 +97,7 @@ Robot::Robot(){ // like init
     sizes[LHAND][2] =     sizes[RHAND][2];
    
     
-    
+    // POSITION definition 
     // position related to neck
     positions[HEAD][0] =      0;
     positions[HEAD][1] =      (sizes[NECK][1]/2)+(sizes[HEAD][1]/2);
@@ -177,25 +186,116 @@ Robot::Robot(){ // like init
     positions[LHAND][1] =     0;
     positions[LHAND][2] =     0;
     
-    parts[HEAD] = new Block(blueColor, positions[HEAD],sizes[HEAD]);
-    parts[NECK] = new Block(whiteColor,positions[NECK],sizes[NECK]);
-    parts[HIPS] = new Block(greyColor,positions[HIPS],sizes[HIPS]);
-    parts[BODY] = new Block(whiteColor,positions[BODY],sizes[BODY]);
-    parts[RLEG] = new Block(whiteColor,positions[RLEG],sizes[RLEG]);
-    parts[RANKLE] = new Block(blueColor,positions[RANKLE],sizes[RANKLE]);
-    parts[RFOOT] = new Block(blueColor,positions[RFOOT],sizes[RFOOT]);
-    parts[RSHOULDER] = new Block(redColor,positions[RSHOULDER],sizes[RSHOULDER]);
-    parts[RARM] = new Block(whiteColor,positions[RARM],sizes[RARM]);
-    parts[RHAND] = new Block(blueColor,positions[RHAND],sizes[RHAND]);
-    parts[LSHOULDER] = new Block(redColor,positions[LSHOULDER],sizes[LSHOULDER]);
-    parts[LARM] = new Block(whiteColor,positions[LARM],sizes[LARM]);
-    parts[LHAND] = new Block(blueColor,positions[LHAND],sizes[LHAND]);
-    parts[LLEG] = new Block(whiteColor,positions[LLEG],sizes[LLEG]);
-    parts[LANKLE] = new Block(blueColor,positions[LANKLE],sizes[LANKLE]);
-    parts[LFOOT] = new Block(blueColor,positions[LFOOT],sizes[LFOOT]);
-    parts[CHEST] = new Block(redColor,positions[CHEST],sizes[CHEST]);
-    parts[RFOREARM] = new Block(redColor,positions[RFOREARM],sizes[RFOREARM]);
-    parts[LFOREARM] = new Block(redColor,positions[LFOREARM],sizes[LFOREARM]);
+    
+    // define initial rotations  // angle x y z
+    rotations[HIPS][0] =      0;
+    rotations[HIPS][1] =      0;
+    rotations[HIPS][2] =      0;
+    rotations[HIPS][3] =      0;
+    
+    rotations[BODY][0] =      0;
+    rotations[BODY][1] =      0;
+    rotations[BODY][2] =      0;
+    rotations[BODY][3] =      0;
+    
+    rotations[CHEST][0] =     0;
+    rotations[CHEST][1] =     0;
+    rotations[CHEST][2] =     0;
+    rotations[CHEST][3] =     0;
+    
+    rotations[NECK][0] =      0;
+    rotations[NECK][1] =      0;
+    rotations[NECK][2] =      0;
+    rotations[NECK][3] =      0;
+    
+    rotations[HEAD][0] =      0;
+    rotations[HEAD][1] =      0;
+    rotations[HEAD][2] =      0;
+    rotations[HEAD][3] =      0;
+    
+    rotations[RLEG][0] =      0;
+    rotations[RLEG][1] =      0;
+    rotations[RLEG][2] =      0;
+    rotations[RLEG][3] =      0;
+    rotations[LLEG][0] =      rotations[RLEG][0];
+    rotations[LLEG][1] =      rotations[RLEG][1];
+    rotations[LLEG][2] =      rotations[RLEG][2];
+    rotations[LLEG][3] =      rotations[RLEG][3];
+    
+    rotations[RANKLE][0] =    0;
+    rotations[RANKLE][1] =    0;
+    rotations[RANKLE][2] =    0;
+    rotations[RANKLE][3] =    0;
+    rotations[LANKLE][0] =    rotations[RANKLE][0];
+    rotations[LANKLE][1] =    rotations[RANKLE][1];
+    rotations[LANKLE][2] =    rotations[RANKLE][2];
+    rotations[LANKLE][3] =    rotations[RANKLE][3];
+    
+    rotations[RFOOT][0] =     0;
+    rotations[RFOOT][1] =     0;
+    rotations[RFOOT][2] =     0;
+    rotations[RFOOT][3] =     0;
+    rotations[LFOOT][0] =     rotations[RFOOT][0];
+    rotations[LFOOT][1] =     rotations[RFOOT][1];
+    rotations[LFOOT][2] =     rotations[RFOOT][2];
+    rotations[LFOOT][3] =     rotations[RFOOT][3];
+    
+    rotations[RSHOULDER][0] = -90;
+    rotations[RSHOULDER][1] = 0;
+    rotations[RSHOULDER][2] = 0;
+    rotations[RSHOULDER][3] = 1;
+    rotations[LSHOULDER][0] = rotations[RSHOULDER][0]*-1;
+    rotations[LSHOULDER][1] = rotations[RSHOULDER][1];
+    rotations[LSHOULDER][2] = rotations[RSHOULDER][2];
+    rotations[LSHOULDER][3] = rotations[RSHOULDER][3];
+    
+    rotations[RFOREARM][0] =  -20;
+    rotations[RFOREARM][1] =  0;
+    rotations[RFOREARM][2] =  1;
+    rotations[RFOREARM][3] =  0;
+    rotations[LFOREARM][0] =  rotations[RFOREARM][0]*-1;
+    rotations[LFOREARM][1] =  rotations[RFOREARM][1];
+    rotations[LFOREARM][2] =  rotations[RFOREARM][2];
+    rotations[LFOREARM][3] =  rotations[RFOREARM][3];
+    
+    rotations[RARM][0] =      0;
+    rotations[RARM][1] =      0;
+    rotations[RARM][2] =      0;
+    rotations[RARM][3] =      0;
+    rotations[LARM][0] =      rotations[RARM][0];
+    rotations[LARM][1] =      rotations[RARM][1];
+    rotations[LARM][2] =      rotations[RARM][2];
+    rotations[LARM][3] =      rotations[RARM][3];
+    
+    rotations[RHAND][0] =     0;
+    rotations[RHAND][1] =     0;
+    rotations[RHAND][2] =     0;
+    rotations[RHAND][3] =     0;
+    rotations[LHAND][0] =     rotations[RHAND][0];
+    rotations[LHAND][1] =     rotations[RHAND][1];
+    rotations[LHAND][2] =     rotations[RHAND][2];
+    rotations[LHAND][3] =     rotations[RHAND][3];
+    
+    
+    parts[HEAD] = new Block(blueColor, positions[HEAD],sizes[HEAD],rotations[HEAD]);
+    parts[NECK] = new Block(whiteColor,positions[NECK],sizes[NECK],rotations[NECK]);
+    parts[HIPS] = new Block(greyColor,positions[HIPS],sizes[HIPS],rotations[HIPS]);
+    parts[BODY] = new Block(whiteColor,positions[BODY],sizes[BODY],rotations[BODY]);
+    parts[RLEG] = new Block(whiteColor,positions[RLEG],sizes[RLEG],rotations[RLEG]);
+    parts[RANKLE] = new Block(blueColor,positions[RANKLE],sizes[RANKLE],rotations[RANKLE]);
+    parts[RFOOT] = new Block(blueColor,positions[RFOOT],sizes[RFOOT],rotations[RFOOT]);
+    parts[RSHOULDER] = new Block(redColor,positions[RSHOULDER],sizes[RSHOULDER],rotations[RSHOULDER]);
+    parts[RARM] = new Block(whiteColor,positions[RARM],sizes[RARM],rotations[RARM]);
+    parts[RHAND] = new Block(blueColor,positions[RHAND],sizes[RHAND],rotations[RHAND]);
+    parts[LSHOULDER] = new Block(redColor,positions[LSHOULDER],sizes[LSHOULDER],rotations[LSHOULDER]);
+    parts[LARM] = new Block(whiteColor,positions[LARM],sizes[LARM],rotations[LARM]);
+    parts[LHAND] = new Block(blueColor,positions[LHAND],sizes[LHAND],rotations[LHAND]);
+    parts[LLEG] = new Block(whiteColor,positions[LLEG],sizes[LLEG],rotations[LLEG]);
+    parts[LANKLE] = new Block(blueColor,positions[LANKLE],sizes[LANKLE],rotations[LANKLE]);
+    parts[LFOOT] = new Block(blueColor,positions[LFOOT],sizes[LFOOT],rotations[LFOOT]);
+    parts[CHEST] = new Block(redColor,positions[CHEST],sizes[CHEST],rotations[CHEST]);
+    parts[RFOREARM] = new Block(redColor,positions[RFOREARM],sizes[RFOREARM],rotations[RFOREARM]);
+    parts[LFOREARM] = new Block(redColor,positions[LFOREARM],sizes[LFOREARM],rotations[LFOREARM]);
     
     
     
@@ -209,23 +309,20 @@ Robot::~Robot(){
 
 void Robot::draw(){ // display()
 
-    //parts[BODY]->draw();
-    //parts[HEAD]->draw();
-    //parts[NECK]->draw();
     
     // core of the body
-    parts[BODY]->draw();
+    parts[BODY]->draw(rotations[BODY]);
     // DOWN PART OF THE BODY
     glPushMatrix();
     {
-        parts[HIPS]->draw();
+        parts[HIPS]->draw(rotations[HIPS]);
         
         // RIGHT SIDE LEGS
         glPushMatrix();
         {
-            parts[RLEG]->draw();
-            parts[RANKLE]->draw();
-            parts[RFOOT]->draw();
+            parts[RLEG]->draw(rotations[RLEG]);
+            parts[RANKLE]->draw(rotations[RANKLE]);
+            parts[RFOOT]->draw(rotations[RFOOT]);
             
         }
         glPopMatrix();
@@ -233,9 +330,9 @@ void Robot::draw(){ // display()
         // LEFT SIDE LEGS
         glPushMatrix();
         {
-            parts[LLEG]->draw();
-            parts[LANKLE]->draw();
-            parts[LFOOT]->draw();
+            parts[LLEG]->draw(rotations[LLEG]);
+            parts[LANKLE]->draw(rotations[LANKLE]);
+            parts[LFOOT]->draw(rotations[LFOOT]);
         }
         glPopMatrix();
         
@@ -246,31 +343,36 @@ void Robot::draw(){ // display()
     // TOP PART OF THE BODY
     glPushMatrix();
     {
-        parts[CHEST]->draw();
+        parts[CHEST]->draw(rotations[CHEST]);
+        
+        //ARMS
+        
         // RIGHT ARM
         glPushMatrix();
         {
-            parts[RSHOULDER]->draw();
-            parts[RARM]->draw();
-            parts[RFOREARM]->draw();
-            parts[RHAND]->draw();
+            parts[RSHOULDER]->draw(rotations[RSHOULDER]);
+            parts[RARM]->draw(rotations[RARM]);
+            parts[RFOREARM]->draw(rotations[RFOREARM]);
+            parts[RHAND]->draw(rotations[RHAND]);
         }
         glPopMatrix();
         
         // LEFT ARM
         glPushMatrix();
         {
-            parts[LSHOULDER]->draw();
-            parts[LARM]->draw();
-            parts[LFOREARM]->draw();
-            parts[LHAND]->draw();
+            parts[LSHOULDER]->draw(rotations[LSHOULDER]);
+            parts[LARM]->draw(rotations[LARM]);
+            parts[LFOREARM]->draw(rotations[LFOREARM]);
+            parts[LHAND]->draw(rotations[LHAND]);
         }
         glPopMatrix();
         
+        
+        
         // NECK
-        parts[NECK]->draw();
+        parts[NECK]->draw(rotations[NECK]);
         // HEAD
-        parts[HEAD]->draw();
+        parts[HEAD]->draw(rotations[HEAD]);
         
         
     }
@@ -282,6 +384,16 @@ void Robot::draw(){ // display()
 }
 
 void Robot::update(){ // update
+    zRotation += direction *0.01; //
+    
+    if(zRotation > 10 || zRotation < 0){
+        direction = -direction;
+    }
+    
+    xRotation += direction *0.01;
+    if(xRotation > 10 || xRotation < 0){
+        direction = -direction;
+    }
 }
 
 

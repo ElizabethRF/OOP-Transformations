@@ -1,6 +1,6 @@
 #include "../headers/block.h"
 
-Block::Block(float colors[3], float positions[3], float sizes[3]){ // like init
+Block::Block(float colors[3], float positions[3], float sizes[3], float rotations[4]){ // like init
     position[0] = positions[0];
     position[1] = positions[1];
     position[2] = positions[2]; // x y z
@@ -10,19 +10,28 @@ Block::Block(float colors[3], float positions[3], float sizes[3]){ // like init
     size[0] = sizes[0];
     size[1] = sizes[1];
     size[2] = sizes[2];
+    rotation[0] = rotations[0]; //angle
+    rotation[1] = rotations[1]; //x
+    rotation[2] = rotations[2]; // y
+    rotation[3] = rotations[3]; // z
+    
+    
 }
 
 Block::~Block(){
     
 }
 
-void Block::draw(){ // display()
+void Block::draw(float rotations[4]){ // display()
         // color
         glColor3f(color[0],color[1],color[2]);
-        // rotate
-    
         // translate
         glTranslatef(position[0], position[1], position[2]);
+
+        // rotate
+        glRotatef(rotation[0], rotation[1], rotation[2], rotation[3]);
+        //glRotatef(rotations[0], rotations[1], rotations[2], rotations[3]);
+    
         glPushMatrix();
         {
             // scale
@@ -30,7 +39,7 @@ void Block::draw(){ // display()
         
             glutSolidCube(1);
         }
-    glPopMatrix();
+        glPopMatrix();
     
 }
 
