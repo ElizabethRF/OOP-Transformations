@@ -7,7 +7,8 @@ Robot::Robot(){ // like init
     xRotation = 0;
     yRotation = 0;
     zRotation = 0;
-    
+    shoulderRotation = 0;
+    shoulderDir = -1;
     
     // color definition
     whiteColor[0]=1.0f;
@@ -249,7 +250,7 @@ Robot::Robot(){ // like init
     rotations[LSHOULDER][2] = rotations[RSHOULDER][2];
     rotations[LSHOULDER][3] = rotations[RSHOULDER][3];
     
-    rotations[RFOREARM][0] =  -20;
+    rotations[RFOREARM][0] =  -10;
     rotations[RFOREARM][1] =  0;
     rotations[RFOREARM][2] =  1;
     rotations[RFOREARM][3] =  0;
@@ -343,6 +344,11 @@ void Robot::draw(){ // display()
     // TOP PART OF THE BODY
     glPushMatrix();
     {
+        //glPushMatrix();
+        rotations[CHEST][0] = shoulderRotation;
+        rotations[CHEST][1] = 0;
+        rotations[CHEST][2] = 1;
+        rotations[CHEST][3] = 0;
         parts[CHEST]->draw(rotations[CHEST]);
         
         //ARMS
@@ -350,6 +356,10 @@ void Robot::draw(){ // display()
         // RIGHT ARM
         glPushMatrix();
         {
+            rotations[RSHOULDER][0] = shoulderRotation;
+            rotations[RSHOULDER][1] = 0;
+            rotations[RSHOULDER][2] = 1;
+            rotations[RSHOULDER][3] = 0 ;
             parts[RSHOULDER]->draw(rotations[RSHOULDER]);
             parts[RARM]->draw(rotations[RARM]);
             parts[RFOREARM]->draw(rotations[RFOREARM]);
@@ -360,18 +370,25 @@ void Robot::draw(){ // display()
         // LEFT ARM
         glPushMatrix();
         {
+            rotations[LSHOULDER][0] = shoulderRotation;
+            rotations[LSHOULDER][1] = 0;
+            rotations[LSHOULDER][2] = 1;
+            rotations[LSHOULDER][3] = 0 ;
             parts[LSHOULDER]->draw(rotations[LSHOULDER]);
             parts[LARM]->draw(rotations[LARM]);
             parts[LFOREARM]->draw(rotations[LFOREARM]);
             parts[LHAND]->draw(rotations[LHAND]);
         }
         glPopMatrix();
-        
-        
-        
+        //glPopMatrix();
         // NECK
+        rotations[NECK][0] = -shoulderRotation;
+        rotations[NECK][1] = 0;
+        rotations[NECK][2] = 1;
+        rotations[NECK][3] = 0 ;
         parts[NECK]->draw(rotations[NECK]);
         // HEAD
+        
         parts[HEAD]->draw(rotations[HEAD]);
         
         
@@ -384,16 +401,10 @@ void Robot::draw(){ // display()
 }
 
 void Robot::update(){ // update
-    zRotation += direction *0.01; //
-    
-    if(zRotation > 10 || zRotation < 0){
-        direction = -direction;
+    if(shoulderRotation > 10  || shoulderRotation <-10){
+        shoulderDir = -shoulderDir;
     }
-    
-    xRotation += direction *0.01;
-    if(xRotation > 10 || xRotation < 0){
-        direction = -direction;
-    }
+    shoulderRotation += 1*shoulderDir;
 }
 
 

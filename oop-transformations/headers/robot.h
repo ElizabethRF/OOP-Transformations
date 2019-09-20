@@ -57,6 +57,9 @@ public:
     float xRotation;
     float yRotation;
     float zRotation;
+    
+    float shoulderRotation;
+    float shoulderDir; 
 
 };
 

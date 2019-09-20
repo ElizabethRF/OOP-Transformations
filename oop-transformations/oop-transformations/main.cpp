@@ -82,7 +82,9 @@ void display()							// Called for each frame (about 60 times per second).
 
 void idle()															// Called when drawing is finished.
 {
-	glutPostRedisplay();											// Display again.
+	robot->update();
+    glutPostRedisplay();// Display again.
+    
 }
 
 void reshape(int x, int y)											// Called when the window geometry changes.
