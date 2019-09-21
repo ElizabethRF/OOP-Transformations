@@ -10,9 +10,10 @@
 // For XCode only: New C++ terminal project. Build phases->Compile with libraries: add OpenGL and GLUT
 // Import this whole code into a new C++ file (main.cpp, for example). Then run.
 // Reference: https://en.wikibooks.org/wiki/OpenGL_Programming/Installation/Mac
-	#include <OpenGL/gl.h>
-	#include <OpenGL/glu.h>
-	#include <GLUT/glut.h>
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h>
+
 #endif
 #ifdef _WIN32
 // For VS on Windows only: Download CG_Demo.zip. UNZIP FIRST. Double click on CG_Demo/CG_Demo.sln
@@ -71,7 +72,7 @@ void display()							// Called for each frame (about 60 times per second).
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);				// Clear color and depth buffers.
 	glLoadIdentity();												// Reset 3D view matrix.
-	gluLookAt(10.0, 0.0, 20.0,										// Where the camera is.
+	gluLookAt(20.0, 0.0, 20.0,										// Where the camera is.
 		      0.0, 0.0, 0.0,										// To where the camera points at.
 		      0.0, 1.0, 0.0);										// "UP" vector.
 

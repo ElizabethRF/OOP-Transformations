@@ -45,6 +45,31 @@ void Block::draw(float rotations[4]){ // display()
     
 }
 
+void Block::draw(float rotations[4],int x){ // display()
+    // color
+    glColor3f(color[0],color[1],color[2]);
+    // transla
+    glTranslatef(position[0], position[1]+size[1]/2, position[2]);
+    
+    // rotate
+    glRotatef(rotation[0], rotation[1], rotation[2], rotation[3]);
+    //printf("%.3f",rotations[0]);
+    
+    glRotatef(rotations[0], rotations[1], rotations[2], rotations[3]);
+    
+    glTranslatef(position[0], position[1]/2, position[2]);
+    
+    glPushMatrix();
+    {
+        // scale
+        glScalef(size[0],size[1],size[2]);
+        
+        glutSolidCube(1);
+    }
+    glPopMatrix();
+    
+}
+
 void Block::update(){ // update
 }
 

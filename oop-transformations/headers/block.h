@@ -35,6 +35,7 @@ public:
     
     
     void draw(float rotation[4]);
+    void draw(float rotation[4], int x);
     void update();
     float position[3];
     float color[3];

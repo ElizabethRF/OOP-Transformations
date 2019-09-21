@@ -59,7 +59,10 @@ public:
     float zRotation;
     
     float shoulderRotation;
-    float shoulderDir; 
+    float shoulderDir;
+    
+    float moveBody;
+    float bodyDir; 
 
 };
 

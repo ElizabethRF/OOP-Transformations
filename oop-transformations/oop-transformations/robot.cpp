@@ -1,4 +1,5 @@
 #include "../headers/robot.h"
+#define GL_SILENCE_DEPRECATION
 
 Robot::Robot(){ // like init
     
@@ -9,6 +10,8 @@ Robot::Robot(){ // like init
     zRotation = 0;
     shoulderRotation = 0;
     shoulderDir = -1;
+    moveBody = 0;
+    bodyDir = -1;
     
     // color definition
     whiteColor[0]=1.0f;
@@ -312,6 +315,7 @@ void Robot::draw(){ // display()
 
     
     // core of the body
+    glTranslatef(0, moveBody,0);
     parts[BODY]->draw(rotations[BODY]);
     // DOWN PART OF THE BODY
     glPushMatrix();
@@ -321,7 +325,16 @@ void Robot::draw(){ // display()
         // RIGHT SIDE LEGS
         glPushMatrix();
         {
+            rotations[RLEG][0] = -shoulderRotation;
+            rotations[RLEG][1] = 1;
+            rotations[RLEG][2] = 0;
+            rotations[RLEG][3] = 0 ;
             parts[RLEG]->draw(rotations[RLEG]);
+            
+            rotations[RANKLE][0] = shoulderRotation;
+            rotations[RANKLE][1] = 1;
+            rotations[RANKLE][2] = 0;
+            rotations[RANKLE][3] = 0 ;
             parts[RANKLE]->draw(rotations[RANKLE]);
             parts[RFOOT]->draw(rotations[RFOOT]);
             
@@ -331,7 +344,16 @@ void Robot::draw(){ // display()
         // LEFT SIDE LEGS
         glPushMatrix();
         {
-            parts[LLEG]->draw(rotations[LLEG]);
+            rotations[LLEG][0] = shoulderRotation;
+            rotations[LLEG][1] = 1;
+            rotations[LLEG][2] = 0;
+            rotations[LLEG][3] = 0 ;
+            parts[LLEG]->draw(rotations[LLEG],1);
+            
+            rotations[LANKLE][0] = shoulderRotation;
+            rotations[LANKLE][1] = 1;
+            rotations[LANKLE][2] = 0;
+            rotations[LANKLE][3] = 0 ;
             parts[LANKLE]->draw(rotations[LANKLE]);
             parts[LFOOT]->draw(rotations[LFOOT]);
         }
@@ -405,6 +427,8 @@ void Robot::update(){ // update
         shoulderDir = -shoulderDir;
     }
     shoulderRotation += 1*shoulderDir;
+
+    moveBody += 0.01*shoulderDir;
 }
 
 
